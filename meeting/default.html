@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta content="telephone=no" name="format-detection">
+    <script src="js/meta.min.js"></script>
+    <title>江南布衣+</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jnby.css">
+    <link rel="stylesheet" type="text/css" href="css/chinaMap.css">
+    <link rel="stylesheet" type="text/css" href="css/last.css">
+    <style>
+        #pageContent{
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pages" style="overflow:hidden;">
+        <iframe id="pageContent" src="catwalk.html"></iframe>
+    </div>
+    <audio id="audio" loop="loop" autoplay="autoplay" src="http://oclpg571w.bkt.clouddn.com/bg.mp3"></audio>
+
+    <script src="js/zepto.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jweixin-1.0.0.js"></script>
+    <script src="js/wechat.js"></script>
+    <script>
+        window.onload=function(){
+            wechat.Handler();
+            sessionStorage.getItem('signByIndex') == null && (window.location.href="index.html")
+            var audio = document.getElementById('audio');
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+             }, false);
+        };
+    </script>
+</body>
+</html>
